@@ -55,7 +55,7 @@ public class ShellSlotItemTemplate : GenericSlot, IClassTemplate<IShellSlotType>
         get { return true; }
     }
     [GenerateMethod(CallBase = false)]
-    public override IEnumerable<IDataRecord> GetAllowed()
+    public override IEnumerable<IValueItem> GetAllowed()
     {
         Ctx._(string.Format("return Repository.AllOf<{0}>().OfType<IDataRecord>();", Ctx.Data.ReferenceClassName));
         yield break;
