@@ -5,6 +5,7 @@ using Invert.Core.GraphDesigner;
 using Invert.Data;
 
 [TemplateClass(TemplateLocation.Both, ClassNameFormat = "{0}")]
+[RequiresNamespace("Invert.Data")]
 public class ShellSlotItemTemplate : GenericSlot, IClassTemplate<IShellSlotType>
 {
     [GenerateProperty]
@@ -57,7 +58,7 @@ public class ShellSlotItemTemplate : GenericSlot, IClassTemplate<IShellSlotType>
     [GenerateMethod(CallBase = false)]
     public override IEnumerable<IValueItem> GetAllowed()
     {
-        Ctx._(string.Format("return Repository.AllOf<{0}>().OfType<IDataRecord>();", Ctx.Data.ReferenceClassName));
+        Ctx._(string.Format("return Repository.AllOf<{0}>().OfType<IValueItem>();", Ctx.Data.ReferenceClassName));
         yield break;
     }
 
