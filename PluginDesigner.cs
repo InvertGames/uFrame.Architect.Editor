@@ -39,7 +39,8 @@ public class PluginDesigner : DiagramPlugin
 #endif
             ;
         container.AddNode<ScreenshotNode, ScreenshotNodeViewModel, ScreenshotNodeDrawer>("Screenshot");
-
+        container.AddWorkspaceConfig<ArchitectWorkspace>("Architect","Create a uFrame Architect workspace for creating plugin graphs.")
+            .WithGraph<PluginGraphData>("Plugin", "Creates a new plugin graph for creating node configurations.");
         var shellConfigurationNode =
             container.AddNode<ShellNodeConfig, ShellNodeConfigViewModel, ShellNodeConfigDrawer>("Node Config")
                 .HasSubNode<ShellNodeConfig>()
@@ -85,10 +86,16 @@ public class PluginDesigner : DiagramPlugin
         container.Connectable<ShellNodeConfigSection, ShellNodeConfigSection>();
     }
 
+    public class ArchitectWorkspace : Workspace
+    {
+        
+    }
+
     [InspectorProperty]
     public static bool GenerateDocumentation
     {
-        get { return InvertGraphEditor.Prefs.GetBool("PLUGINDESIGNER_GENDOCS", true); }
+        get { return false; }
+     //   InvertGraphEditor.Prefs.GetBool("PLUGINDESIGNER_GENDOCS", true); }
         set
         {
             InvertGraphEditor.Prefs.SetBool("PLUGINDESIGNER_GENDOCS", value);
