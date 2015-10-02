@@ -76,7 +76,7 @@ public class ShellNodeConfig : ShellInheritableNode, IShellNodeTypeClass, IDocum
             this.Changed("Color",ref _color, value);
         }
     }
-    [InspectorProperty, JsonProperty]
+    [InspectorProperty("Visual appearance of the node"), JsonProperty]
     public NodeStyle NodeStyle
     {
         get { return _nodeStyle; }
