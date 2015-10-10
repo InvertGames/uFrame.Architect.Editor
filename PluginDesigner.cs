@@ -15,7 +15,7 @@ public class PluginDesigner : DiagramPlugin
         //container.RegisterInstance<IToolbarCommand>(new PrintPlugins(), "Json");
       
 #endif
-        container.RegisterInstance<IDiagramNodeCommand>(new SelectColorCommand(), "SelectColor");
+	    //container.RegisterInstance<IDiagramNodeCommand>(new SelectColorCommand(), "SelectColor");
         var pluginConfig = container
             .AddItem<ShellNodeSectionsSlot>()
             .AddItem<ShellNodeInputsSlot>()
@@ -38,7 +38,7 @@ public class PluginDesigner : DiagramPlugin
             .AddCodeTemplate<DocumentationTemplate>()
 #endif
             ;
-        container.AddNode<ScreenshotNode, ScreenshotNodeViewModel, ScreenshotNodeDrawer>("Screenshot");
+       // container.AddNode<ScreenshotNode, ScreenshotNodeViewModel, ScreenshotNodeDrawer>("Screenshot");
         container.AddWorkspaceConfig<ArchitectWorkspace>("Architect","Create a uFrame Architect workspace for creating plugin graphs.")
             .WithGraph<PluginGraphData>("Plugin", "Creates a new plugin graph for creating node configurations.");
         var shellConfigurationNode =
@@ -47,7 +47,7 @@ public class PluginDesigner : DiagramPlugin
                 .HasSubNode<ScreenshotNode>()
                 .HasSubNode<ShellTemplateConfigNode>()
             ;
-        shellConfigurationNode.AddFlag("Graph Type");
+       // shellConfigurationNode.AddFlag("Graph Type");
 
         container.AddNode<ShellTemplateConfigNode>("Code Template")
             .Color(NodeColor.Purple);
@@ -95,13 +95,13 @@ public class PluginDesigner : DiagramPlugin
     public static bool GenerateDocumentation
     {
         get { return false; }
-     //   InvertGraphEditor.Prefs.GetBool("PLUGINDESIGNER_GENDOCS", true); }
+        //   InvertGraphEditor.Prefs.GetBool("PLUGINDESIGNER_GENDOCS", true); }
         set
         {
-            InvertGraphEditor.Prefs.SetBool("PLUGINDESIGNER_GENDOCS", value);
+//            InvertApplication.Prefs.SetBool("PLUGINDESIGNER_GENDOCS", value);
         }
     }
-     
+
 
 
 }
