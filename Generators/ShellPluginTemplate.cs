@@ -1,4 +1,4 @@
-using System.CodeDom;
+﻿using System.CodeDom;
 using System.Linq;
 using Invert.Core.GraphDesigner;
 using Invert.IOC;
@@ -149,11 +149,7 @@ public class ShellPluginTemplate : DiagramPlugin, IClassTemplate<ShellPluginNode
         {
             method.Statements.Add(new CodeSnippetExpression(string.Format("{0}.Inheritable()", varName)));
         }
-        if (!string.IsNullOrEmpty(nodeType.DataBag["Color"]))
-        {
-            method.Statements.Add(
-                new CodeSnippetExpression(string.Format("{0}.Color(NodeColor.{1})", varName, nodeType.DataBag["Color"])));
-        }
+
 
 
         foreach (var item in nodeType.SubNodes)

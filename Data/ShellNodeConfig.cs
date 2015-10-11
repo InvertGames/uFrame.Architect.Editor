@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Invert.Core;
@@ -19,41 +19,8 @@ public class ShellNodeConfig : ShellInheritableNode, IShellNodeTypeClass, IDocum
     private bool _inheritable;
     private bool _isClass;
 
-    public override void Document(IDocumentationBuilder docs)
-    {
-        docs.BeginSection(this.Name);
-        docs.Section(this.Node.Name);
-        docs.NodeImage(this);
-        var className = FullName + "Node";
-        var type = InvertApplication.FindType(className);
-        if (type == null)
-        {
-            //Debug.Log("Couldn't find type in documentation " + className);
-            // base.Document(docs);
-        }
-        else
-        {
-            var instance =  Activator.CreateInstance(type) as IDiagramNodeItem;
-            if (instance == null)
-            {
-                //base.Document(docs);
-            }
-            else
-            {
-                instance.Document(docs);
-            }
+   
 
-        }
-
-        foreach (var item in PersistedItems.OfType<IShellNodeConfigItem>())
-        {
-            docs.BeginArea("NODEITEM");
-            item.Document(docs);
-            docs.EndArea();
-        }
-            
-        docs.EndSection();
-    }
 
     public string NodeLabel
     {

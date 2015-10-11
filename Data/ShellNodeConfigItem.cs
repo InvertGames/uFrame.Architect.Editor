@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Invert.Core;
@@ -107,28 +107,5 @@ public class ShellNodeConfigItem : GenericNodeChildItem, IShellNodeConfigItem, I
         }
     }
 
-    public override void Document(IDocumentationBuilder docs)
-    {
-        base.Document(docs);
-        var className = ClassName;
-        var type = InvertApplication.FindTypeByName(className);
-        if (type == null)
-        {
-            InvertApplication.Log("Couldn't find type in documentation " + className);
-            // base.Document(docs);
-        }
-        else
-        {
-            var instance = Activator.CreateInstance(type) as IDiagramNodeItem;
-            if (instance == null)
-            {
-                //base.Document(docs);
-            }
-            else
-            {
-                instance.Document(docs);
-            }
 
-        }
-    }
 }

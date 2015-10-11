@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,19 +34,7 @@ public class ShellNodeTypeNode : ShellInheritableNode, IShellNode, IShellConnect
     {
         get
         {
-            var color = DataBag["Color"];
-            if (color != null)
-            {
-                try
-                {
-                    var value = (NodeColor)Enum.Parse(typeof(NodeColor), color, true);
-                    return value;
-                }
-                catch (Exception ex)
-                {
-                    return NodeColor.Gray;
-                }
-            }
+
             return NodeColor.Gray;
         }
     }

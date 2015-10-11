@@ -35,7 +35,7 @@ public class PluginDesigner : DiagramPlugin
             .HasSubNode<ShellNodeConfig>()
             .HasSubNode<ScreenshotNode>()
 #if UNITY_EDITOR
-            .AddCodeTemplate<DocumentationTemplate>()
+	        // .AddCodeTemplate<DocumentationTemplate>()
 #endif
             ;
        // container.AddNode<ScreenshotNode, ScreenshotNodeViewModel, ScreenshotNodeDrawer>("Screenshot");
