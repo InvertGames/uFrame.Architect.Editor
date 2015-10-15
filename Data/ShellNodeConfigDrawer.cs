@@ -86,8 +86,9 @@ public class ShellNodeConfigDrawer : DiagramNodeDrawer<ShellNodeConfigViewModel>
             NodeViewModel.DiagramViewModel.CurrentRepository.AllOf<TItem>();
         foreach (var item in nodeConfigSection)
         {
+            var item1 = item;
             ctxMenu.AddItem(new GUIContent(item.Name), false,
-                () => { InvertApplication.Execute(() => { addPointer(item); }); });
+                () => { InvertApplication.Execute(() => { addPointer(item1); }); });
         }
         ctxMenu.ShowAsContext();
 

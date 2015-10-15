@@ -6,9 +6,12 @@ using Invert.Core;
 using Invert.Core.GraphDesigner;
 
 using Invert.IOC;
-
+[UnityEditor.InitializeOnLoad]
 public class PluginDesigner : DiagramPlugin
 {
+	static PluginDesigner() {
+		InvertApplication.CachedAssembly(typeof(PluginDesigner).Assembly);
+	}
     public override void Initialize(UFrameContainer container)
     {
 #if DEBUG && UNITY_EDITOR

@@ -1,8 +1,0 @@
-{
-	"Identifier":"d23f168f-8fb5-4a6c-8b56-250b2b57e91b"	, 
-	"Time":"10/3/2015 2:53:12 PM"	, 
-	"Group":145312	, 
-	"DataRecordId":"f8aa9b23-86fe-4669-8de9-3aaf4dd6186f"	, 
-	"Type":2	, 
-	"RecordType":"ShellNodeConfig, Assembly-CSharp-Editor-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"	, 
-	"Data":"{\r\n\t\"Color\":0\t, \r\n\t\"NodeStyle\":0\t, \r\n\t\"Inheritable\":false\t, \r\n\t\"IsClass\":false\t, \r\n\t\"Row\":0\t, \r\n\t\"Column\":0\t, \r\n\t\"Visibility\":0\t, \r\n\t\"Name\":\"CollectionModifiedHandler\"\t, \r\n\t\"GraphId\":\"5f0e4e63-96ee-4a23-b1e3-4cfce292bfaf\"\t, \r\n\t\"Identifier\":\"f8aa9b23-86fe-4669-8de9-3aaf4dd6186f\"\t, \r\n\t\"Expanded\":false}\r\n"}
